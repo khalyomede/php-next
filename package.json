@@ -1,0 +1,33 @@
+{
+	"name": "php-next",
+	"version": "0.1.0",
+	"description": "Write modern PHP code.",
+	"main": "lib/main.js",
+	"repository": "https://github.com/khalyomede/php-next",
+	"author": "Khalyomede <khalyomede@gmail.com>",
+	"license": "MIT",
+	"keywords": [
+		"php",
+		"ast",
+		"parse",
+		"transpile",
+		"next"
+	],
+	"dependencies": {
+		"file-exists": "5.*",
+		"is-function": "1.*",
+		"joi": "14.*"
+	},
+	"devDependencies": {
+		"@types/node": "10.*",
+		"chai": "4.*",
+		"gulp": "4.*",
+		"gulp-typescript": "5.*",
+		"mocha": "5.*",
+		"typescript": "3.*"
+	},
+	"scripts": {
+		"watch": "gulp listen",
+		"test": "mocha"
+	}
+}
