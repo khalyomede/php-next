@@ -4,7 +4,7 @@
  * @param {String} code
  * @return {String}
  */
-const importSyntax = (code: string): string =>
+const useFrom = (code: string): string =>
 	code.replace(
 		/use(.+)from(.+);/g,
 		(match: string, classes: string, namespace: string) => {
@@ -21,4 +21,4 @@ const importSyntax = (code: string): string =>
 		}
 	);
 
-export = importSyntax;
+export = useFrom;
