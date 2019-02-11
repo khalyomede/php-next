@@ -15,7 +15,6 @@
 	],
 	"dependencies": {
 		"fancy-log": "1.*",
-		"is-function": "1.*",
 		"joi": "14.*"
 	},
 	"devDependencies": {
@@ -29,5 +28,8 @@
 	"scripts": {
 		"watch": "gulp listen",
 		"test": "mocha"
-	}
+	},
+	"files": [
+		"lib/main.js"
+	]
 }
