@@ -20,7 +20,7 @@ describe("php-next", () => {
 			it("should return an exception if one of the feature is not a function", () => {
 				expect(() => {
 					phpNext(__dirname + "/../code-sample/simple.php", {
-						features: [arrowFunction, "hello world", importSyntax]
+						features: [arrowFunction, "hello world", useFrom]
 					});
 				}).to.throw(TypeError);
 			});
@@ -40,7 +40,7 @@ describe("php-next", () => {
 			it("should return an exception message if one of the feature is not a function", () => {
 				expect(() => {
 					phpNext(__dirname + "/../code-sample/simple.php", {
-						features: [arrowFunction, "hello world", importSyntax]
+						features: [arrowFunction, "hello world", useFrom]
 					});
 				}).to.throw("feature is not a function");
 			});
