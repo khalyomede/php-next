@@ -65,10 +65,24 @@ const parseOptions = (options: Options): Options => {
 		if (!("target" in parsedOptions)) {
 			parseOptions["target"] = "7.0.0";
 		}
+
+		if (!("debug" in parsedOptions)) {
+			parsedOptions["debug"] = false;
+		}
+
+		if (!("validate" in parsedOptions)) {
+			parsedOptions["validate"] = false;
+		}
+
+		if (!("features" in parsedOptions)) {
+			parsedOptions["features"] = [];
+		}
 	} else {
 		parsedOptions = {
 			features: [],
-			debug: false
+			debug: false,
+			target: "7.0.0",
+			validate: false
 		};
 	}
 
@@ -89,10 +103,14 @@ const parseOptions = (options: Options): Options => {
 const phpNext = (source: string, options: Options) => {
 	const parsedOptions = parseOptions(options);
 
-	let transpiledCode = getCode(source, options);
+	let transpiledCode = getCode(source, parsedOptions);
 
 	for (const feature of parsedOptions.features) {
-		transpiledCode = feature(transpiledCode, options);
+		transpiledCode = feature(transpiledCode, {
+			debug: parsedOptions.debug,
+			taret: parsedOptions.target,
+			validate: parsedOptions.validate
+		});
 	}
 
 	return transpiledCode;
