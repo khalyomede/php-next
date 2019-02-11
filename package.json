@@ -14,7 +14,7 @@
 		"next"
 	],
 	"dependencies": {
-		"file-exists": "5.*",
+		"fancy-log": "1.*",
 		"is-function": "1.*",
 		"joi": "14.*"
 	},
